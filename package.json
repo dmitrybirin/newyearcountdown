@@ -13,7 +13,6 @@
   "author": "Dmitry Birin (dmitry.birin@gmail.com)",
   "license": "ISC",
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.7.2",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
@@ -28,9 +27,8 @@
     "typescript-styled-plugin": "^0.18.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.3"
   }
 }
