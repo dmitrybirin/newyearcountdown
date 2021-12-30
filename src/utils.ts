@@ -22,6 +22,8 @@ const getFilteredCity = (city: string) => {
 	}
 };
 
+export const localNewYearTime = 'January 1, 2022 00:00:00';
+
 export const getCityInfo = (city: string): CityInfo | null => {
 	try {
 		const currentUtcOffsetInMinutes = getLocalUtcOffsetInMinutes();
@@ -43,7 +45,7 @@ export const getCityInfo = (city: string): CityInfo | null => {
 
 export const getTimeToEvent = (offsetInMinutes: number) => {
 	const now = +new Date();
-	const targetTimeMs = +new Date('January 1, 2022 00:00:00');
+	const targetTimeMs = +new Date(localNewYearTime);
 
 	const msLeft = targetTimeMs - now;
 	const secondsLeft = Math.floor(msLeft / 1000);

@@ -28,6 +28,7 @@ const CityName = styled.h1`
 
 const RowContainer = styled.div`
 	display: flex;
+	padding: 0 30px;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
