@@ -1,0 +1,11 @@
+{
+  "name": "new-year-countdown",
+  "version": "1.0.0",
+  "description": "Webapp to celebrate new year for different timezones ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitry Birin (dmitry.birin@gmail.com)",
+  "license": "ISC"
+}
