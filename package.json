@@ -13,11 +13,14 @@
   "author": "Dmitry Birin (dmitry.birin@gmail.com)",
   "license": "ISC",
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.7.2",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "parcel": "^2.0.1"
   },
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

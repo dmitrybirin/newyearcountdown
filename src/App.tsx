@@ -1,5 +1,10 @@
+import styled from '@emotion/styled';
 import * as React from 'react'
 
 export const App: React.FC = () => {
-    return <h1>Hello world!</h1>;
+    return <Header>Hello world!</Header>;
 }
+
+const Header = styled.h1`
+    color: red
+`
