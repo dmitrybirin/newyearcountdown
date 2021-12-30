@@ -23,7 +23,10 @@ export const CountDown: React.FC<{ cityInfo: CityInfo }> = ({ cityInfo }) => {
 };
 
 const Timer = styled.h1`
-	font-size: 48px;
+	font-size: 10vw;
 	font-weight: 900;
 	font-family: 'Roboto', sans-serif;
+	@media (max-width: 768px) {
+		font-size: 64px;
+	}
 `;

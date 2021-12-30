@@ -31,4 +31,7 @@ const RowContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 `;
