@@ -16,7 +16,14 @@
     "@emotion/babel-plugin": "^11.7.2",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "parcel": "^2.0.1"
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "parcel": "^2.0.1",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
