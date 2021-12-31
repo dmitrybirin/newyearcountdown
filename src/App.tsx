@@ -9,8 +9,11 @@ export const App: React.FC = () => {
 			<Header>{`🎉 ${new Date(localNewYearTime).getFullYear()} is coming 🎉`}</Header>
 			<CityRow city="barnaul" />
 			<CityRow city="st. petersburg, ru" />
+			<CityRow city="vilnius" />
 			<CityRow city="tallinn" />
+			<CityRow city="berlin" />
 			<CityRow city="london, gb" />
+			<CityRow city="seattle" />
 		</>
 	);
 };
