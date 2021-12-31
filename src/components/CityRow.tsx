@@ -6,13 +6,9 @@ import { getCityInfo } from '../utils';
 export const CityRow: React.FC<{ city: string }> = ({ city }) => {
 	const cityInfo = React.useMemo(() => getCityInfo(city), [city]);
 
-	if (!cityInfo) {
-		return null;
-	}
-
 	return cityInfo ? (
 		<RowContainer>
-			<CityName>{city}</CityName>
+			<CityName>{cityInfo.cityName}</CityName>
 			<CountDown cityInfo={cityInfo} />
 		</RowContainer>
 	) : null;

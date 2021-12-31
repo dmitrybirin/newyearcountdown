@@ -7,10 +7,10 @@ export const App: React.FC = () => {
 	return (
 		<>
 			<Header>{`🎉 ${new Date(localNewYearTime).getFullYear()} is coming 🎉`}</Header>
-			<CityRow city="moscow" />
-			<CityRow city="london, gb" />
-			<CityRow city="tallinn" />
 			<CityRow city="barnaul" />
+			<CityRow city="st. petersburg, ru" />
+			<CityRow city="tallinn" />
+			<CityRow city="london, gb" />
 		</>
 	);
 };
