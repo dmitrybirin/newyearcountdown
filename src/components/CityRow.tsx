@@ -28,7 +28,11 @@ const RowContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-	@media (max-width: 768px) {
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+
+	@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
 		flex-direction: column;
 	}
 `;
