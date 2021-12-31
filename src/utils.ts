@@ -26,16 +26,19 @@ export const localNewYearTime = 'January 1, 2022 00:00:00';
 
 export const getCityInfo = (city: string): CityInfo | null => {
 	try {
-		const currentUtcOffsetInMinutes = getLocalUtcOffsetInMinutes();
+		const localUtcOffsetInMinutes = getLocalUtcOffsetInMinutes();
 
 		const [{ city: cityName, timezone }] = getFilteredCity(city);
 
 		const cityTimezone = Timezones.getTimezone(timezone);
+		const relativeOffsetInMinutes = localUtcOffsetInMinutes - cityTimezone.utcOffset;
+		const targetCityNewYear = getNewYearTargetWithOffset(relativeOffsetInMinutes);
 
 		return {
 			cityName,
 			utcOffsetInMinutes: cityTimezone.utcOffset,
-			relativeOffsetInMinutes: currentUtcOffsetInMinutes - cityTimezone.utcOffset,
+			relativeOffsetInMinutes,
+			targetCityNewYear,
 		};
 	} catch (error) {
 		console.error(error);
@@ -43,18 +46,27 @@ export const getCityInfo = (city: string): CityInfo | null => {
 	}
 };
 
-export const getTimeToEvent = (offsetInMinutes: number) => {
+export const getNewYearTargetWithOffset = (offsetInMinutes: number) => {
+	const localNewYearMs = +new Date(localNewYearTime);
+	const targetNewYearMs = localNewYearMs + offsetInMinutes * 60000;
+	return targetNewYearMs;
+};
+
+export const getTimerToEvent = (targetTimeMs: number) => {
 	const now = +new Date();
-	const targetTimeMs = +new Date(localNewYearTime);
+
+	if (now > targetTimeMs) {
+		return { hh: '00', mm: '00', ss: '00', stopped: true };
+	}
 
 	const msLeft = targetTimeMs - now;
 	const secondsLeft = Math.floor(msLeft / 1000);
-	const minutesLeft = Math.floor(secondsLeft / 60 + offsetInMinutes);
+	const minutesLeft = Math.floor(secondsLeft / 60);
 	const hoursLeft = Math.floor(minutesLeft / 60);
 
 	const hh = `${hoursLeft}`.padStart(2, '0');
 	const mm = `${minutesLeft > 0 ? minutesLeft % 60 : 0}`.padStart(2, '0');
 	const ss = `${secondsLeft > 0 ? secondsLeft % 60 : 0}`.padStart(2, '0');
 
-	return { hh, mm, ss };
+	return { hh, mm, ss, stopped: false };
 };

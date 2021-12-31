@@ -1,21 +1,21 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { getTimeToEvent } from '../utils';
+import { getTimerToEvent } from '../utils';
 import { CityInfo } from '../types';
-
-const getTimeString = (offsetInMinutes: number) => {
-	const { hh, mm, ss } = getTimeToEvent(offsetInMinutes);
-	return `${hh}:${mm}:${ss}`;
-};
 
 export const CountDown: React.FC<{ cityInfo: CityInfo }> = ({ cityInfo }) => {
 	const [timeString, setTimeString] = React.useState('');
 
 	React.useEffect(() => {
-		const timer = setInterval(
-			() => setTimeString(getTimeString(cityInfo.relativeOffsetInMinutes)),
-			1000
-		);
+		const timer = setInterval(() => {
+			const { hh, mm, ss, stopped } = getTimerToEvent(cityInfo.targetCityNewYear);
+			if (stopped) {
+				setTimeString(`🎉🎄 ${hh}:${mm}:${ss}`);
+				clearInterval(timer);
+			} else {
+				setTimeString(`${hh}:${mm}:${ss}`);
+			}
+		}, 1000);
 		return () => clearInterval(timer);
 	}, []);
 
