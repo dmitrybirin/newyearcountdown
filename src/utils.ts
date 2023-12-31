@@ -22,7 +22,7 @@ const getFilteredCity = (city: string) => {
 	}
 };
 
-export const localNewYearTime = 'January 1, 2022 00:00:00';
+export const localNewYearTime = 'January 1, 2024 00:00:00';
 
 export const getCityInfo = (city: string): CityInfo | null => {
 	try {
